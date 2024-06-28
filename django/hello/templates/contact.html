@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+CONTACT
+{% endblock title %}
+{% block body %}
+<div class="container-fluid px-0">
+<img src="http://daveduabh.org/wp-content/uploads/2013/09/contact-us.jpg "  class="d-block h-50 w-100" alt="...">
+</div>
+<h1 class="text-center">CONTACT US</h1>
+<div class="container">
+<form method="POST" action="/contact">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="name" class="form-label">NAME</label>
+        <input type="name" class="form-control" id="name" name="name" placeholder="Enter your Name">
+    </div>
+    <div class="mb-3">
+        <label for="Phone" class="form-label">PHONE NO</label>
+        <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your Phone No">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email Address">
+      <div id="email" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+
+    <div class="mb-3">
+  <label for="desc" class="form-label">Tell Me About What You Want To Contact Me For</label>
+  <textarea class="form-control" id="desc"name="desc" rows="3"></textarea>
+</div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock body %}
